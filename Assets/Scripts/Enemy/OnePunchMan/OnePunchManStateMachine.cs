@@ -41,13 +41,13 @@ namespace StatePattern.Enemy
 
         public void ChangeState(EnemyStates newState) => ChangeState(States[newState]);
     }
+}
 
-    public enum EnemyStates
-    {
-        IDLE,
-        ROTATING,
-        SHOOTING,
-        PATROLLING,
-        CHASING
-    }
+public enum EnemyStates
+{
+    IDLE,
+    ROTATING,
+    SHOOTING,
+    PATROLLING,
+    CHASING
 }
