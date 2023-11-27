@@ -10,3 +10,11 @@ namespace StatePattern.StateMachine
         public void OnStateExit();
     }
 }
+public enum States
+{
+    IDLE,
+    ROTATING,
+    SHOOTING,
+    PATROLLING,
+    CHASING
+}

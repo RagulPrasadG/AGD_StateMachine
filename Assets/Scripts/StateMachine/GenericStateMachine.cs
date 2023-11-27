@@ -8,17 +8,16 @@ public class GenericStateMachine<T> where T : EnemyController
 {
     protected T Owner;
     protected IState currentState;
-    protected Dictionary<States, IState> States = new Dictionary<States, IState>();
+    protected Dictionary<States, IState> states = new Dictionary<States, IState>();
 
     public GenericStateMachine(T Owner)
     {
         this.Owner = Owner;
     }
 
-
     protected void SetOwner()
     {
-        foreach (IState state in States.Values)
+        foreach (IState state in states.Values)
         {
             state.Owner = Owner;
         }
@@ -33,5 +32,5 @@ public class GenericStateMachine<T> where T : EnemyController
         currentState?.OnStateEnter();
     }
 
-    public void ChangeState(States newState) => ChangeState(States[newState]);
+    public void ChangeState(States newState) => ChangeState(states[newState]);
 }
