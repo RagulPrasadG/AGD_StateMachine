@@ -15,10 +15,10 @@ namespace StatePattern.Enemy
 
         private void CreateStates()
         {
-            States.Add(StateMachine.States.IDLE, new IdleState<PatrolManController>(this));
-            States.Add(StateMachine.States.PATROLLING, new PatrollingState<PatrolManController>(this));
-            States.Add(StateMachine.States.CHASING, new ChasingState<PatrolManController>(this));
-            States.Add(StateMachine.States.SHOOTING, new ShootingState<PatrolManController>(this));
+            states.Add(StateMachine.States.IDLE, new IdleState<PatrolManController>(this));
+            states.Add(StateMachine.States.PATROLLING, new PatrollingState<PatrolManController>(this));
+            states.Add(StateMachine.States.CHASING, new ChasingState<PatrolManController>(this));
+            states.Add(StateMachine.States.SHOOTING, new ShootingState<PatrolManController>(this));
         }
     }
 }

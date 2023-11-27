@@ -23,6 +23,7 @@ MonoBehaviour:
   IdleTime: 3
   RotationSpeed: 100
   RotationThreshold: 0.5
+  TeleportingRadius: 4
   BulletData: {fileID: 11400000, guid: cfa5b8d473156f34f8a4255079c7aaa0, type: 2}
   RateOfFire: 1
   PatrollingPoints:
