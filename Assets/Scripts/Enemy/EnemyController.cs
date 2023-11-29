@@ -18,6 +18,8 @@ namespace StatePattern.Enemy
         public Quaternion Rotation => enemyView.transform.rotation;
         public Vector3 Position => enemyView.transform.position;
 
+        public bool isClone;
+        public int currentCloneDepth;
 
         public EnemyController(EnemyScriptableObject enemyScriptableObject)
         {
@@ -51,6 +53,7 @@ namespace StatePattern.Enemy
         {
             GameService.Instance.EnemyService.EnemyDied(this);
             enemyView.Destroy();
+            Debug.Log("Enemy Killed!");
         }
 
         public void ToggleKillOverlay(bool value) => GameService.Instance.UIService.ToggleKillOverlay(value);
@@ -62,7 +65,10 @@ namespace StatePattern.Enemy
         public void SetRotation(Quaternion desiredRotation) => enemyView.transform.rotation = desiredRotation;
 
         public void ToggleEnemyColor(bool value)=>  enemyView.ToggleColor(value);
-        
+
+        public void SetCloneDepth(int depth) => this.currentCloneDepth = depth;
+
+        public void SetEnemyColor(Color color) => enemyView.SetEnemyColor(color);
 
         public virtual void Shoot()
         {

@@ -23,7 +23,8 @@ namespace StatePattern.Enemy
         public float TeleportingRadius;
         public BulletScriptableObject BulletData;
         public float RateOfFire;
-
+        public int cloneDepth;
+        public int clonesPerDeath;
         public List<Vector3> PatrollingPoints;
         public float PlayerStoppingDistance;
     }

@@ -48,9 +48,10 @@ namespace StatePattern.Enemy
             }
             else
             {
-                enemyGraphic.color = Color.white;
+                enemyGraphic.color = Controller.isClone ? Color.blue : Color.white;
             }
         }
+        public void SetEnemyColor(Color color) => enemyGraphic.color = color;
 
         private void Update() => Controller?.UpdateEnemy();
 
@@ -78,7 +79,6 @@ namespace StatePattern.Enemy
             var blood = Instantiate(bloodStain);
             blood.transform.position = transform.position;
             Controller.ToggleKillOverlay(false);
-
             Destroy(gameObject);
         }
 

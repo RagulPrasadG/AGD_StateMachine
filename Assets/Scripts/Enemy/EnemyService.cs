@@ -48,6 +48,14 @@ namespace StatePattern.Enemy
             UIService.UpdateEnemyCount(activeEnemies.Count, spawnedEnemies);
         }
 
+        public void CreateClonedEnemy(EnemyScriptableObject enemyScriptableObject,int cloneDepth)
+        {
+            EnemyController enemy = new CloneManController(enemyScriptableObject,true);
+            enemy.SetEnemyColor(Color.blue);
+            enemy.SetCloneDepth(cloneDepth);
+            activeEnemies.Add(enemy);
+        }
+
         public EnemyController CreateEnemy(EnemyScriptableObject enemyScriptableObject)
         {
             EnemyController enemy;
@@ -62,6 +70,9 @@ namespace StatePattern.Enemy
                     break;
                 case EnemyType.Hitman:
                     enemy = new HitmanController(enemyScriptableObject);
+                    break;
+                case EnemyType.CloneMan:
+                    enemy = new CloneManController(enemyScriptableObject);
                     break;
                 default:
                     enemy = new EnemyController(enemyScriptableObject);
